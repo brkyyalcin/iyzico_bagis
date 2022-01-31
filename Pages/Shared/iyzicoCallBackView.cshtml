@@ -1,0 +1,41 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+<div class="row">
+    <div class="col-12 text-center">
+        @if (ViewBag.durum)
+        {
+            if (ViewBag.odemeDurum.Status == "success")
+            {
+                <div class="row">
+                    <div class="col-4 mx-auto text-center">
+                        <img class="rounded mb-2" style="width:100px;" src="~/img/success.png" />
+                        <h5>Ödeme İşlemi Başarılı.</h5>
+                    </div>
+                </div>
+            }
+            else
+            {
+                <div class="row">
+                    <div class="col-4 mx-auto text-center">
+                        <img class="rounded mb-2" style="width:100px;" src="~/img/error.png" />
+                        <h5>Ödeme İşlemi Başarısız.</h5>
+                        <p>@ViewBag.odemeDurum.ErrorMessage</p>
+                    </div>
+                </div>
+            }
+        }
+        else
+        {
+            <div class="row">
+                <div class="col-4 mx-auto text-center">
+                    <img class="rounded mb-2" style="width:100px;" src="~/img/error.png" />
+                    <h5>İşlem Sırasında Bir hata Oluştu Tekrar Deneyiniz.</h5>
+                </div>
+            </div>
+
+        }
+    </div>
+</div>
